@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <!-- Lista com todos os carros -->
+        <item
+            android:id="@+id/nav_item_acao"
+            android:checked="true"
+            android:title="@string/acao" />
+
+        <!-- Lista com os carros clássicos -->
+        <item
+            android:id="@+id/nav_item_animacao"
+            android:checked="true"
+            android:title="@string/animacao" />
+
+        <!-- Lista com os carros esportivos -->
+        <item
+            android:id="@+id/nav_item_guerra"
+            android:checked="true"
+            android:title="@string/guerra" />
+
+        <!-- Lista com os carros de luxo -->
+        <item
+            android:id="@+id/nav_tem_classicos"
+            android:checked="true"
+            android:title="@string/classicos" />
+
+    </group>
+</menu>
