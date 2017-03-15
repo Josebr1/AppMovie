@@ -37,9 +37,16 @@ public class FilmeFragment extends BaseFragment {
 
 
         TextView txtSinopse = (TextView) view.findViewById(R.id.tSinopse);
-        txtSinopse.setText(mFilme.nome);
+        txtSinopse.setText(mFilme.sinopse);
 
-        Log.d("Filme", mFilme.nome);
+        TextView txtCategoria = (TextView) view.findViewById(R.id.tCategoria);
+        txtCategoria.setText("Categoria: " + mFilme.categoria);
+
+        TextView txtAnoTempo = (TextView) view.findViewById(R.id.tAnoTempo);
+        txtAnoTempo.setText("Ano/Duração: " + mFilme.ano);
+
+
+        Log.d("Filme", mFilme.categoria);
 
         view.findViewById(R.id.imgPlayVideo).setOnClickListener(new View.OnClickListener() {
             @Override

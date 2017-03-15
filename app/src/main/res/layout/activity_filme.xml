@@ -3,18 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/windows_color"
 
     android:fitsSystemWindows="true">
     <!-- Conteúdo com scroll -->
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/windows_second"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <!-- Aqui é a parte com scroll -->
         <FrameLayout
             android:id="@+id/FilmeFragment"
+            android:background="@color/windows_color"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.AppBarLayout
@@ -57,8 +60,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
         android:clickable="true"
-        android:src="@drawable/common_full_open_on_phone"
-        android:tint="@color/black"
+        android:src="@drawable/play"
+        android:tint="@color/white"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="bottom|right|end" />
 </android.support.design.widget.CoordinatorLayout>

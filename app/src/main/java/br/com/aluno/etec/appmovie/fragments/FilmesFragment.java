@@ -83,6 +83,15 @@ public class FilmesFragment extends BaseFragment {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setHasFixedSize(true);
 
+        // Swipe to Refresh
+        mSwipeLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeToRefresh);
+        mSwipeLayout.setOnRefreshListener(OnRefreshListener());
+        mSwipeLayout.setColorSchemeResources(
+                R.color.primary_dark,
+                R.color.primary,
+                R.color.accent
+        );
+
         // Inflate the layout for this fragment
         return view;
     }
