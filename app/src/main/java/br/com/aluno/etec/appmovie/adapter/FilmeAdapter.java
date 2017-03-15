@@ -55,6 +55,7 @@ public class FilmeAdapter extends RecyclerView.Adapter<FilmeAdapter.FilmeViewHol
         Filme filme = mFilme.get(position);
 
         holder.tNome.setText(filme.nome);
+        holder.tSinopse.setText(filme.sinopse);
         holder.progress.setVisibility(View.INVISIBLE);
 
         Picasso.with(mContext).load(filme.urlFoto).fit().into(holder.img, new Callback() {
@@ -86,6 +87,7 @@ public class FilmeAdapter extends RecyclerView.Adapter<FilmeAdapter.FilmeViewHol
     public class FilmeViewHolder extends RecyclerView.ViewHolder{
 
         public TextView tNome;
+        public TextView tSinopse;
         ImageView img;
         ProgressBar progress;
         CardView cardView;
@@ -93,6 +95,7 @@ public class FilmeAdapter extends RecyclerView.Adapter<FilmeAdapter.FilmeViewHol
         public FilmeViewHolder(View view) {
             super(view);
             tNome = (TextView) view.findViewById(R.id.text);
+            tSinopse = (TextView) view.findViewById(R.id.textSinopse);
             img = (ImageView) view.findViewById(R.id.img);
             progress = (ProgressBar) view.findViewById(R.id.progressImg);
             cardView = (CardView) view.findViewById(R.id.card_view);

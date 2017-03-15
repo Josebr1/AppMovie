@@ -8,9 +8,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,8 +36,10 @@ public class FilmesFragment extends BaseFragment {
 
     private int mTipo;
     protected RecyclerView mRecyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
     private List<Filme> mFilmes;
     private SwipeRefreshLayout mSwipeLayout;
+
 
     public static FilmesFragment newIntance(int tipo) {
         Bundle args = new Bundle();
@@ -76,7 +79,7 @@ public class FilmesFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_filmes, container, false);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1, GridLayoutManager.VERTICAL, false));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setHasFixedSize(true);
 

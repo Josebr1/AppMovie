@@ -65,7 +65,8 @@ public class FilmeService {
                 filme.nome = jsonFilme.optString("nome");
                 Log.i("Nome", filme.nome);
                 filme.categoria = jsonFilme.optString("categoria");
-                filme.ano = jsonFilme.optString("ano");
+                filme.ano = jsonFilme.optString("ano_tempo");
+                filme.sinopse = jsonFilme.optString("sinopse");
                 filme.urlFoto = jsonFilme.optString("url_foto");
                 filme.urlVideo = jsonFilme.optString("url_video");
 

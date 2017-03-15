@@ -12,9 +12,10 @@ public class Filme {
     private static final long serialVersionUID = 6601006766832473959L;
 
     public long id;
-    public String categoria;
     public String nome;
+    public String categoria;
     public String ano;
+    public String sinopse;
     public String urlFoto;
     public String urlVideo;
 
