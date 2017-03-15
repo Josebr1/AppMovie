@@ -1,6 +1,7 @@
 package br.com.aluno.etec.appmovie.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,10 +15,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.parceler.Parcels;
+
 import java.util.List;
 
 import br.com.aluno.etec.appmovie.FilmeApplication;
 import br.com.aluno.etec.appmovie.R;
+import br.com.aluno.etec.appmovie.activity.FilmeActivity;
 import br.com.aluno.etec.appmovie.adapter.FilmeAdapter;
 import br.com.aluno.etec.appmovie.domain.Filme;
 import br.com.aluno.etec.appmovie.domain.FilmeService;
@@ -143,6 +147,11 @@ public class FilmesFragment extends BaseFragment {
         return new FilmeAdapter.FilmeOnClickListener() {
             @Override
             public void onClickFilme(View view, int idx) {
+                Filme filme = mFilmes.get(idx);
+
+                Intent intent = new Intent(getContext(), FilmeActivity.class);
+                intent.putExtra("filme", Parcels.wrap(filme));
+                startActivity(intent);
 
             }
         };

@@ -16,7 +16,7 @@ import livroandroid.lib.view.RoundedImageView;
 
 /**
  * Created by Jose on 14/03/2017.
- * 
+ *
  */
 
 public class BaseActivity extends livroandroid.lib.activity.BaseActivity {
