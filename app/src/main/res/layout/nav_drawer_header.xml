@@ -13,7 +13,7 @@
         android:layout_height="@dimen/navDrawerBackground_layout_height"
         android:contentDescription="@string/vazio"
         android:scaleType="fitXY"
-        android:src="@drawable/fundo_movie" />
+        android:src="@color/primary" />
     <!-- Logo usuário -->
     <livroandroid.lib.view.RoundedImageView
         android:id="@+id/imgUserPhoto"

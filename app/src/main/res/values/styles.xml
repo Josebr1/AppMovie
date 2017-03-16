@@ -20,15 +20,20 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="colorControlActivated">@android:color/white</item>
     </style>
 
     <!-- Tema base + NoActionBar -->
     <style name="AppTheme.NoActionBar.NavDrawer">
-
     </style>
 
     <!-- Temas para a Toolbar, ver include_toolbar.xml -->
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
 </resources>
