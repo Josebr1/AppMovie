@@ -12,11 +12,12 @@ import android.widget.TextView;
 
 import br.com.aluno.etec.appmovie.R;
 import br.com.aluno.etec.appmovie.fragments.FilmesFragment;
+import br.com.aluno.etec.appmovie.utils.Dialog;
+import livroandroid.lib.utils.AndroidUtils;
 import livroandroid.lib.view.RoundedImageView;
 
 /**
  * Created by Jose on 14/03/2017.
- *
  */
 
 public class BaseActivity extends livroandroid.lib.activity.BaseActivity {
@@ -76,49 +77,34 @@ public class BaseActivity extends livroandroid.lib.activity.BaseActivity {
 
     // Definindo os eventos no itens do drawer
     private void onNavDrawerItemSelected(MenuItem menuItem) {
+        Bundle args = new Bundle();
         switch (menuItem.getItemId()) {
-
             case R.id.nav_item_acao:
-                Bundle argsAcao = new Bundle();
-
-                argsAcao.putInt("tipo", R.string.acao);
-
-                FilmesFragment fragAcao = new FilmesFragment();
-                FilmesFragment.newIntance(R.string.acao);
-                fragAcao.setArguments(argsAcao);
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragAcao).commit();
+                args = new Bundle();
+                args.putInt("tipo", R.string.acao);
                 break;
             case R.id.nav_item_animacao:
-                Bundle argsAnimacao = new Bundle();
-
-                argsAnimacao.putInt("tipo", R.string.animacao);
-
-                FilmesFragment fragAnimacao = new FilmesFragment();
-                FilmesFragment.newIntance(R.string.animacao);
-                fragAnimacao.setArguments(argsAnimacao);
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragAnimacao).commit();
+                args = new Bundle();
+                args.putInt("tipo", R.string.animacao);
                 break;
             case R.id.nav_item_guerra:
-                Bundle argsGuerra = new Bundle();
-
-                argsGuerra.putInt("tipo", R.string.guerra);
-
-                FilmesFragment fragGuerra = new FilmesFragment();
-                FilmesFragment.newIntance(R.string.guerra);
-                fragGuerra.setArguments(argsGuerra);
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragGuerra).commit();
+                args = new Bundle();
+                args.putInt("tipo", R.string.guerra);
                 break;
             case R.id.nav_tem_classicos:
-                Bundle argsClassico = new Bundle();
-
-                argsClassico.putInt("tipo", R.string.classicos);
-
-
-                FilmesFragment fragClassico = new FilmesFragment();
-                FilmesFragment.newIntance(R.string.classicos);
-                fragClassico.setArguments(argsClassico);
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragClassico).commit();
+                args = new Bundle();
+                args.putInt("tipo", R.string.classicos);
                 break;
+        }
+
+        // Inicialização do fragment de acordo com a categoria do Bundle
+        if (AndroidUtils.isNetworkAvailable(this)) {
+            FilmesFragment fragAcao = new FilmesFragment();
+            FilmesFragment.newIntance(R.string.acao);
+            fragAcao.setArguments(args);
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragAcao).commit();
+        } else {
+            Dialog.show(this, "Sem Conexão", "Tente se conectar a internet");
         }
     }
 

@@ -11,6 +11,9 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -28,7 +31,6 @@ dependencies {
     })
     compile 'com.squareup:otto:1.3.8'
     compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.1'
     compile 'br.com.livroandroid:android-utils:1.0.5'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'org.parceler:parceler:1.0.3'
@@ -37,4 +39,6 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.3.0'
     compile 'com.android.support:support-v4:25.3.0'
     testCompile 'junit:junit:4.12'
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
+    compile 'me.drakeet.materialdialog:library:1.3.1'
 }
